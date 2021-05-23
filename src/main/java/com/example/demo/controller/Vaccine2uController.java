@@ -24,11 +24,6 @@ public class Vaccine2uController {
     private IVaccineService vaccineService;
 
     @Operation(summary = "List all the vaccines registered.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Found the book",
-                    content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = VaccineRegister.class)) })
-    })
     @GetMapping
     public ResponseEntity<List<FindAllVaccineResponseDTO>> findAllVaccine(){
         return ResponseEntity.ok(vaccineService.findAllVaccine());
